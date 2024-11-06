@@ -18,23 +18,14 @@ To set up this project, follow the instructions below:
 
 1. **Clone the Repository**:
    ```bash
-   git clone <your-repository-url>
-   cd disney-character-search
+   git clone https://github.com/suryachig5/disney-characters.git
+   cd disney-characters
    ```
 
 2. **Install Dependencies**:
    This project uses `npm` for package management. Run the following command to install all dependencies:
    ```bash
    npm install
-   ```
-
-3. **Environment Variables**:
-   Ensure the API endpoint is set correctly for fetching Disney character data. You may create a `.env` file in the root directory to configure environment-specific variables, if needed.
-
-4. **Build the Project**:
-   To bundle and prepare the application, run:
-   ```bash
-   npm run build
    ```
 
 ### Running the Application
@@ -46,19 +37,13 @@ To set up this project, follow the instructions below:
    ```
    The application will be available at `http://localhost:3000`.
 
-2. **Running Tests**:
-   This project includes unit tests. To run the tests, use:
-   ```bash
-   npm test
-   ```
-
 ### Project Overview
 
 This Disney character search application allows users to:
 - **Browse Disney Characters**: View a list of characters, featuring character details like films, TV shows, video games, and park attractions.
 - **Search for Characters**: A search bar allows live search functionality for Disney characters.
 - **View Character Details**: Click on a character to view detailed information on a dedicated page.
-- **Manage User Profile**: A user profile page to view and edit profile information, saved via cookies.
+- **Manage User Profile**: A user profile page to view and edit user information which is then saved in browser cookie.
 
 ### Folder Structure
 
@@ -94,9 +79,7 @@ src
 ├── images              // Static images (e.g., logo, default images, etc.)
 │
 ├── styles              // Global SCSS files
-│   ├── variables.scss  // Common style variables like colors and font sizes
-│   ├── mixins.scss     // SCSS mixins for reuse across components
-│   └── base.scss       // Global styles like resets and basic typography
+│   ├── _colors.scss    // Common style variables for colors
 │
 ├── App.tsx             // Main application component that sets up routing
 ├── index.tsx           // Application entry point
@@ -105,7 +88,7 @@ src
 
 ### Additional Notes
 
-- **API Endpoints**: The project relies on the [Disney API](https://api.disneyapi.dev) for character data. The API functions are defined in `src/helper/api.ts`.
+- **API Endpoints**: The project relies on the [Disney API](https://disneyapi.dev/docs/) for character data. The API functions are defined in `src/helper/api.ts`.
 - **State Management**: This project uses React's built-in `useState` and `useEffect` hooks for managing state locally.
 - **Routing**: The app uses `react-router-dom` to handle navigation between pages.
 - **Data Persistence**: Profile data is stored in cookies and can be updated through the profile edit page.
