@@ -12,7 +12,10 @@ export const FOOTER_DISCLAIMER =
 export const LAST_UPDATED = "Last Updated:";
 export const MILLISECONDS_IN_A_YEAR = 31557600000;
 export const NO_RESULTS_FOUND = "No Results Found For:";
+export const NOT_AVAILABLE = "Not Available";
 export const SEARCH_PLACEHOLDER = "Find a character...";
 export const SEARCH_RESULTS = "Search Results";
+export const SERVICE_UNAVAILABLE =
+  "Service temporarily unavailable. Please try again later.";
 export const UPDATE_PROFILE = "Update Profile";
 export const VIEW_PROFILE = "VIEW PROFILE";

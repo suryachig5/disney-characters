@@ -1,9 +1,9 @@
-interface StateOption {
+interface StatesList {
   value: string;
   label: string;
 }
 
-export const US_STATES: StateOption[] = [
+export const US_STATES: StatesList[] = [
   { value: "AL", label: "Alabama" },
   { value: "AK", label: "Alaska" },
   { value: "AZ", label: "Arizona" },

@@ -4,7 +4,11 @@ import Button from "../../components/Button/Button";
 import CardContainer from "../../components/CardContainer/CardContainer";
 import Footer from "../../components/Footer/Footer";
 import SearchHeader from "../../components/SearchHeader/SearchHeader";
-import { EDIT_PROFILE, MILLISECONDS_IN_A_YEAR } from "../../helper/constants";
+import {
+  EDIT_PROFILE,
+  MILLISECONDS_IN_A_YEAR,
+  NOT_AVAILABLE,
+} from "../../helper/constants";
 import styles from "./UserProfilePage.module.scss";
 
 interface UserProfile {
@@ -74,13 +78,13 @@ const UserProfilePage = () => {
    * @param {string} birthDate - User's birth date.
    * @returns {string} Age in years or "Not Available" if birthDate is invalid.
    */
-  const getAge = (birthDate: string) => {
-    if (!birthDate) return "Not Available";
+  const getAge = (birthDate: string | undefined) => {
+    if (!birthDate) return NOT_AVAILABLE;
     const age = Math.floor(
       (new Date().getTime() - new Date(birthDate).getTime()) /
         MILLISECONDS_IN_A_YEAR
     );
-    return age > 0 ? age : "Not Available";
+    return age > 0 ? age : NOT_AVAILABLE;
   };
 
   /**
@@ -89,64 +93,52 @@ const UserProfilePage = () => {
    * @returns {JSX.Element} JSX element displaying profile information.
    */
   const renderProfileInfo = () => {
-    if (!profile) {
-      return (
-        <ul className={styles.profileList}>
-          <li>
-            <strong>Age:</strong> Not Available
-          </li>
-          <li>
-            <strong>Location:</strong> Not Available
-          </li>
-          <li>
-            <strong>Favorite Disney Character:</strong> Not Available
-          </li>
-          <li>
-            <strong>Favorite Disney Movie:</strong> Not Available
-          </li>
-          <li>
-            <strong>Favorite Disneyland:</strong> Not Available
-          </li>
-        </ul>
-      );
-    }
-
+    const {
+      birthDate,
+      city,
+      favoriteCharacter,
+      favoriteDisneyland,
+      favoriteMovie,
+      firstName,
+      lastName,
+      state,
+    } = profile || {};
     /**
      * Helper function to format the user's location based on city and state.
      *
      * @returns {string} Formatted location or "Not Available".
      */
     const renderLocation = () => {
-      if (profile.city && profile.state) {
-        return `${profile.city}, ${profile.state}`;
-      } else if (profile.city) {
-        return profile.city;
-      } else if (profile.state) {
-        return profile.state;
+      if (city && state) {
+        return `${city}, ${state}`;
+      } else if (city) {
+        return city;
+      } else if (state) {
+        return state;
       } else {
-        return "Not Available";
+        return NOT_AVAILABLE;
       }
     };
 
     return (
       <ul className={styles.profileList}>
         <li>
-          <strong>Age:</strong> {getAge(profile.birthDate)}
+          <strong>Age:</strong> {getAge(birthDate)}
         </li>
         <li>
           <strong>Location:</strong> {renderLocation()}
         </li>
         <li>
           <strong>Favorite Disney Character:</strong>{" "}
-          {profile.favoriteCharacter || "Not Available"}
+          {favoriteCharacter || NOT_AVAILABLE}
         </li>
         <li>
           <strong>Favorite Disney Movie:</strong>{" "}
-          {profile.favoriteMovie || "Not Available"}
+          {favoriteMovie || NOT_AVAILABLE}
         </li>
         <li>
           <strong>Favorite Disneyland:</strong>{" "}
-          {profile.favoriteDisneyland || "Not Available"}
+          {favoriteDisneyland || NOT_AVAILABLE}
         </li>
       </ul>
     );

@@ -61,11 +61,18 @@ const SearchHeader = ({ children }: SearchHeaderProps) => {
   };
 
   /**
+   * Handles clicking the logo by clearing the search term and navigating home.
+   */
+  const handleLogoClick = () => {
+    setSearchTerm("");
+  };
+
+  /**
    * Renders the main header with logo, search input, and profile button.
    */
   const renderHeader = () => (
     <header className={styles.header}>
-      <Link to="/">
+      <Link to="/" onClick={handleLogoClick}>
         <img src={logo} alt="Disney Logo" className={styles.logo} />
       </Link>
       <input

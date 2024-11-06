@@ -1,4 +1,4 @@
-@import '../../styles/colors';
+@import "../../styles/colors";
 
 .formContainer {
   display: flex;
@@ -95,12 +95,23 @@
 }
 
 .select {
-  appearance: none;
   background-repeat: no-repeat;
   background-position: right 12px center;
   background-size: 20px;
-  padding-right: 40px;
+  padding: 8px 12px 8px 0;
   width: 105px;
+}
+
+.selectMediumWidth {
+  width: 320px;
+  padding: 8px 12px 8px 0;
+  border: 1px solid #c2ccda;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: $disney-grey;
+  background-color: $white;
+  transition: border-color 0.2s ease;
 }
 
 .buttonGroup {

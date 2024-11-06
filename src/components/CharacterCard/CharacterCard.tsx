@@ -1,11 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import {
-    FEATURED_FILMS,
-    FEATURED_PARK_ATTRACTIONS,
-    FEATURED_SHORT_FILMS,
-    FEATURED_TV_SHOWS,
-    FEATURED_VIDEO_GAMES,
-    VIEW_PROFILE,
+  FEATURED_FILMS,
+  FEATURED_PARK_ATTRACTIONS,
+  FEATURED_SHORT_FILMS,
+  FEATURED_TV_SHOWS,
+  FEATURED_VIDEO_GAMES,
+  VIEW_PROFILE,
 } from "../../helper/constants";
 import defaultImage from "../../images/default-image.png";
 import styles from "./CharacterCard.module.scss";

@@ -5,7 +5,8 @@ import CardContainer from "../../components/CardContainer/CardContainer";
 import Footer from "../../components/Footer/Footer";
 import SearchHeader from "../../components/SearchHeader/SearchHeader";
 import { CANCEL, UPDATE_PROFILE } from "../../helper/constants";
-import { US_STATES } from "../../helper/us_states";
+import { DISNEYLAND_LOCATIONS } from "../../helper/disneylandLocations";
+import { US_STATES } from "../../helper/usStatesList";
 import styles from "./EditUserProfile.module.scss";
 
 interface UserProfile {
@@ -27,7 +28,7 @@ const defaultProfile: UserProfile = {
   favoriteMovie: "",
   firstName: "",
   lastName: "",
-  state: "CA",
+  state: "",
 };
 
 /**
@@ -86,13 +87,14 @@ const EditProfileForm = () => {
   };
 
   /**
-   * Updates the state field in the profile.
-   * @param {ChangeEvent<HTMLSelectElement>} e - The event object.
+   * Updates any select field in the profile.
+   * @param {ChangeEvent<HTMLSelectElement>} e - The event object containing the field name and new value.
    */
-  const handleStateChange = (e: ChangeEvent<HTMLSelectElement>) => {
+  const handleDropdownChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    const { name, value } = e.target;
     setProfile((prev) => ({
       ...prev,
-      state: e.target.value,
+      [name]: value,
     }));
   };
 
@@ -163,7 +165,7 @@ const EditProfileForm = () => {
     firstName,
     lastName,
     state,
-  } = profile || {};
+  } = profile;
 
   return (
     <div className={styles.formContainer}>
@@ -196,10 +198,11 @@ const EditProfileForm = () => {
                   name="state"
                   className={styles.select}
                   value={state}
-                  onChange={handleStateChange}
+                  onChange={handleDropdownChange}
                 >
+                  <option value="">Select</option>
                   {US_STATES.map((state) => (
-                    <option key={state.value} value={state.value}>
+                    <option key={state.value} value={state.label}>
                       {state.value}
                     </option>
                   ))}
@@ -223,12 +226,23 @@ const EditProfileForm = () => {
               )}
             </div>
 
-            <div className={styles.fullWidth}>
-              {renderFormField(
-                "Favorite Disneyland",
-                "favoriteDisneyland",
-                favoriteDisneyland
-              )}
+            <div className={styles.cityStateFields}>
+              <div className={styles.formField}>
+                <label className={styles.label}>Favorite Disneyland</label>
+                <select
+                  name="favoriteDisneyland"
+                  className={styles.selectMediumWidth}
+                  value={favoriteDisneyland}
+                  onChange={handleDropdownChange}
+                >
+                  <option value="">Select</option>
+                  {DISNEYLAND_LOCATIONS.map((park) => (
+                    <option key={park.value} value={park.label}>
+                      {park.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
             </div>
 
             <div className={styles.buttonGroup}>
