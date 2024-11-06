@@ -21,7 +21,7 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 20px;
   width: 100%;
   margin-bottom: 20px;
 
@@ -40,7 +40,7 @@
 }
 
 .searchBar {
-  width: 976px;
+  width: 1200px;
   padding: 12px 20px;
   border: none;
   border-radius: 25px;
