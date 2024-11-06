@@ -1,0 +1,50 @@
+@import '../../styles/colors';
+
+.userProfilePage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $white;
+  padding: 20px;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: $disney-grey;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+
+    li {
+      margin: 10px 0;
+      font-size: 1rem;
+      color: $disney-black-sub-text;
+
+      strong {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .editProfileButton {
+    padding: 10px 20px;
+    background-color: $disney-teal;
+    color: $white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $disney-dark-teal;
+    }
+  }
+}

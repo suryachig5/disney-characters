@@ -1,0 +1,36 @@
+@import '../../styles/colors';
+
+.featuredSection {
+  background-color: $disney-teal;
+  padding: 50px 80px 80px 80px;
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.title {
+  font-size: 42px;
+  color: $white;
+  font-weight: 400;
+  margin-bottom: 32px;
+  text-align: center;
+  margin-top: 0px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

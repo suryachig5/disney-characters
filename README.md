@@ -1,46 +1,113 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Disney Character Search App
 
-## Available Scripts
+A Disney character search application built with React, TypeScript, and SCSS that allows users to explore various Disney characters, view details about them, and manage a user profile.
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+1. [Project Setup](#project-setup)
+2. [Running the Application](#running-the-application)
+3. [Project Overview](#project-overview)
+4. [Folder Structure](#folder-structure)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Project Setup
 
-### `npm test`
+To set up this project, follow the instructions below:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **Clone the Repository**:
+   ```bash
+   git clone <your-repository-url>
+   cd disney-character-search
+   ```
 
-### `npm run build`
+2. **Install Dependencies**:
+   This project uses `npm` for package management. Run the following command to install all dependencies:
+   ```bash
+   npm install
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. **Environment Variables**:
+   Ensure the API endpoint is set correctly for fetching Disney character data. You may create a `.env` file in the root directory to configure environment-specific variables, if needed.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. **Build the Project**:
+   To bundle and prepare the application, run:
+   ```bash
+   npm run build
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Running the Application
 
-### `npm run eject`
+1. **Start the Development Server**:
+   To start a local development server, use:
+   ```bash
+   npm start
+   ```
+   The application will be available at `http://localhost:3000`.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+2. **Running Tests**:
+   This project includes unit tests. To run the tests, use:
+   ```bash
+   npm test
+   ```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Project Overview
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+This Disney character search application allows users to:
+- **Browse Disney Characters**: View a list of characters, featuring character details like films, TV shows, video games, and park attractions.
+- **Search for Characters**: A search bar allows live search functionality for Disney characters.
+- **View Character Details**: Click on a character to view detailed information on a dedicated page.
+- **Manage User Profile**: A user profile page to view and edit profile information, saved via cookies.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Folder Structure
 
-## Learn More
+Below is an overview of the folder structure used in this project:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+src
+│
+├── components
+│   ├── Button          // Reusable button component
+│   ├── CardContainer   // Layout component that wraps child elements in a styled card container
+│   ├── CharacterCard   // Displays character data on the homepage and search results
+│   ├── CharacterGrid   // Grid layout for rendering CharacterCard components
+│   ├── FeaturedCharacters // Section displaying a subset of featured characters
+│   ├── Footer          // Footer component with logo and disclaimer
+│   ├── Loading         // Loading spinner component for async operations
+│   ├── NoResults       // Displayed when no search results are found
+│   ├── SearchHeader    // Header with search functionality and profile link
+│   └── ...
+│
+├── helper              // Utility files and constants
+│   ├── api.ts          // Functions for API calls
+│   ├── constants.ts    // Text constants used across components
+│   └── us_states.ts    // List of US states used in the profile form
+│
+├── pages
+│   ├── CharacterDetailsPage // Page for viewing detailed character information
+│   ├── EditUserProfile      // Form for editing the user's profile
+│   ├── Homepage             // Main homepage with featured characters and search
+│   ├── SearchResultsPage    // Page for viewing search results (if separate from Homepage)
+│   ├── UserProfilePage      // Page displaying the user's profile information
+│
+├── images              // Static images (e.g., logo, default images, etc.)
+│
+├── styles              // Global SCSS files
+│   ├── variables.scss  // Common style variables like colors and font sizes
+│   ├── mixins.scss     // SCSS mixins for reuse across components
+│   └── base.scss       // Global styles like resets and basic typography
+│
+├── App.tsx             // Main application component that sets up routing
+├── index.tsx           // Application entry point
+└── README.md           // Project documentation
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Additional Notes
+
+- **API Endpoints**: The project relies on the [Disney API](https://api.disneyapi.dev) for character data. The API functions are defined in `src/helper/api.ts`.
+- **State Management**: This project uses React's built-in `useState` and `useEffect` hooks for managing state locally.
+- **Routing**: The app uses `react-router-dom` to handle navigation between pages.
+- **Data Persistence**: Profile data is stored in cookies and can be updated through the profile edit page.
+
+Enjoy exploring Disney characters and customizing your profile!

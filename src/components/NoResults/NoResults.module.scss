@@ -1,0 +1,26 @@
+@import '../../styles/colors';
+
+.noResultsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+
+  h2 {
+    font-size: 1.5rem;
+    color: $disney-black;
+    margin: 10px 0;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    color: $disney-black;
+    font-weight: bold;
+    margin-top: 0;
+  }
+}
+
+.noResultsImage {
+  margin-bottom: 20px;
+}

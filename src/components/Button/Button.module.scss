@@ -1,0 +1,43 @@
+@import '../../styles/colors';
+
+.button {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease;
+  margin-top: 20px;
+
+  &.primary {
+    background-color: $disney-teal;
+    color: $white;
+    border: none;
+
+    &:hover:not(:disabled) {
+      background-color: #15394a;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      background-color: $disney-teal;
+    }
+  }
+
+  &.secondary {
+    background-color: transparent;
+    color: #1a4a5e;
+    border: 1px solid $disney-teal;
+
+    &:hover:not(:disabled) {
+      background-color: $disney-light-teal;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}

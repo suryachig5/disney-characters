@@ -1,0 +1,91 @@
+@import '../../styles/colors';
+
+.searchHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $white;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 1350px;
+
+  @media (max-width: 768px) {
+    overflow-x: hidden;
+  }
+
+  @media (max-width: 480px) {
+    overflow-x: hidden;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.logo {
+  width: 90px;
+
+  @media (max-width: 480px) {
+    width: 70px;
+  }
+}
+
+.searchBar {
+  width: 976px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 14px;
+  background-color: $disney-light-grey;
+  outline: none;
+
+  &::placeholder {
+    color: #bbb;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  @media (max-width: 480px) {
+    max-width: 300px;
+    font-size: 12px;
+    padding: 10px 15px;
+  }
+}
+
+.profileButton {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $disney-teal;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+
+  @media (max-width: 480px) {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+.profileIcon {
+  color: $white;
+  font-size: 20px;
+
+  @media (max-width: 480px) {
+    font-size: 18px;
+  }
+}

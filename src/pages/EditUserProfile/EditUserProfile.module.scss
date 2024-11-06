@@ -1,0 +1,110 @@
+@import '../../styles/colors';
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $white;
+  padding: 20px 0;
+
+  form {
+    width: 100%;
+    max-width: 656px;
+  }
+}
+
+.formField {
+  margin-bottom: 24px;
+}
+
+.sharedFields {
+  display: flex;
+  gap: 40px;
+
+  > div {
+    flex: 1;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+.cityStateFields {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 24px;
+
+  .cityField {
+    flex: 1;
+  }
+
+  .stateField {
+    flex: 1;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+.fullWidth {
+  width: 100px;
+  margin-bottom: 24px;
+
+  .input {
+    width: 656px;
+  }
+}
+
+.label {
+  width: 200px;
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: $disney-grey;
+  margin-bottom: 8px;
+
+  &.required::after {
+    content: " *";
+    color: $disney-red;
+  }
+}
+
+.input,
+.select {
+  width: 320px;
+  padding: 8px 12px;
+  border: 1px solid #c2ccda;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: $disney-grey;
+  background-color: $white;
+  transition: border-color 0.2s ease;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::placeholder {
+    color: $disney-grey;
+  }
+}
+
+.select {
+  appearance: none;
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 20px;
+  padding-right: 40px;
+  width: 105px;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 12px;
+  margin-top: 32px;
+}
